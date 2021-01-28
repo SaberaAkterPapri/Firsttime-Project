@@ -1,0 +1,17 @@
+{%  extends 'first/main.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+    {{form}}
+    <hr>
+    {% endfor %}
+
+    <input type="submit" name="Submit">
+</form>
+
+{% endblock content %}

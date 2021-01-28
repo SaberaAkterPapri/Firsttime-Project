@@ -1,0 +1,15 @@
+{%  extends 'first/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<p>Are you sure that you want to delete"{{item}}"?</p>
+
+<form action="{% url 'update_order' item=id %}" method="POST">
+    
+    {% csrf_token %}
+    <a href="{% url 'update_order '%}" >Cancel</a>
+    <input type="submit" name="Confirm"> 
+
+</form>
+{% endblock content %} 
